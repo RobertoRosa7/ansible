@@ -1,4 +1,9 @@
 ---
-- hosts: all
-  tasks:
-  - shell: 'echo hello > /vagrant/world.txt'
+- hosts: database
+  roles:
+    - mysql
+
+- hosts: wordpress
+  roles:
+    - webserver
+    - wordpress
